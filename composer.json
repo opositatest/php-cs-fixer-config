@@ -1,0 +1,29 @@
+{
+  "name": "opositatest/php-cs-fixer-config",
+  "description": "PHP CS Fixer configuration for opositatest projects",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Opositatest Dev Team",
+      "email": "dev@opositatest.com"
+    }
+  ],
+  "require": {
+    "php": "^7.2",
+    "friendsofphp/php-cs-fixer": "^2.15"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Opositatest\\PhpCsFixerConfig\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Opositatest\\PhpCsFixerConfig\\Test\\": "test"
+    }
+  }
+}

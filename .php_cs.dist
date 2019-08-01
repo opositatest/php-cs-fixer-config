@@ -1,0 +1,6 @@
+<?php
+$config = new Opositatest\PhpCsFixerConfig\StrictConfig();
+$config->getFinder()
+    ->in(__DIR__ . "/src")
+    ->in(__DIR__ . "/tests");
+return $config;
