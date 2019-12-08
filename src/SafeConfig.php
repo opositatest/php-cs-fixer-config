@@ -50,6 +50,7 @@ class SafeConfig extends Config
             'single_line_comment_style' => true,
             'yoda_style' => true,
             'method_chaining_indentation' => true,
+            'phpdoc_line_span' => ['const' => 'single', 'property' => 'single'],
         ];
     }
 }
