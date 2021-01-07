@@ -25,6 +25,7 @@ class SafeConfig extends Config
             '@PSR2' => true,
             '@PhpCsFixer' => true,
 
+            'php_unit_test_class_requires_covers' => false,
             'align_multiline_comment' => true,
             'array_syntax' => [
                 'syntax' => 'short'
