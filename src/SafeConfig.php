@@ -22,7 +22,7 @@ class SafeConfig extends Config
 
             // additional configurations
             'attribute_empty_parentheses' => [
-                'use_parentheses' => false
+                'use_parentheses' => false,
             ],
             /*'ordered_attributes' => [
                 'sort_algorithm' => 'custom',
@@ -36,12 +36,12 @@ class SafeConfig extends Config
                 ]
             ],*/
             'array_syntax' => [
-                'syntax' => 'short'
+                'syntax' => 'short',
             ],
             'general_phpdoc_annotation_remove' => [
                 'annotations' => [
-                    'author', 'package', 'subpackage'
-                ]
+                    'author', 'package', 'subpackage',
+                ],
             ],
             'header_comment' => ['header' => ''],
             'heredoc_to_nowdoc' => true,
@@ -52,7 +52,7 @@ class SafeConfig extends Config
             'method_chaining_indentation' => true,
             'phpdoc_line_span' => [
                 'const' => 'single',
-                'property' => 'single'
+                'property' => 'single',
             ],
             'protected_to_private' => true,
             'self_static_accessor' => true,
@@ -61,16 +61,15 @@ class SafeConfig extends Config
             'ternary_to_null_coalescing' => true,
             'php_unit_attributes' => true,
 
-
             // Symfony's ruleset overrides
             'blank_line_before_statement' => [
                 'statements' => [
                     'return',
-                    'try'
+                    'try',
                 ],
             ],
             'method_argument_space' => [
-                'on_multiline' => 'ensure_fully_multiline'
+                'on_multiline' => 'ensure_fully_multiline',
             ],
         ];
     }

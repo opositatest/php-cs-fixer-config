@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Opositatest\PhpCsFixerConfig\Test;
 
-use function array_keys;
-use function implode;
 use Opositatest\PhpCsFixerConfig\SafeConfig;
 use PHPUnit\Framework\TestCase;
 
@@ -23,9 +21,9 @@ final class SafeConfigTest extends TestCase
 
     public function testConfigDoesNotContainRiskyRules(): void
     {
-        $this->assertNotRegExp(
+        $this->assertDoesNotMatchRegularExpression(
             '/\:risky/',
-            implode(' ', array_keys((new SafeConfig())->getRules()))
+            \implode(' ', \array_keys((new SafeConfig())->getRules()))
         );
     }
 }
