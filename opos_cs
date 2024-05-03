@@ -1,4 +1,4 @@
 #!/usr/bin/env php
 <?php declare(strict_types=1);
 
-exec(__DIR__ . '/../../friendsofphp/php-cs-fixer/php-cs-fixer fix --config=' . __DIR__ . '/.php_cs.dist.php.php');
+exec(__DIR__ . '/../../friendsofphp/php-cs-fixer/php-cs-fixer fix --config=' . __DIR__ . '/.php_cs.dist.php');
