@@ -17,61 +17,56 @@ class SafeConfig extends Config
     public function getRules(): array
     {
         return [
-            '@PHP56Migration' => true,
-            '@PHP70Migration' => true,
-            '@PHP71Migration' => true,
-            '@PHP73Migration' => true,
+            // symfony set
             '@Symfony' => true,
-            '@PSR2' => true,
-            '@PhpCsFixer' => true,
 
-            'php_unit_test_class_requires_covers' => false,
-            'align_multiline_comment' => true,
-            'array_syntax' => [
-                'syntax' => 'short'
+            // ok
+            'attribute_empty_parentheses' => [
+                'use_parentheses' => false
             ],
-            'blank_line_before_statement' => true,
-            'combine_consecutive_issets' => true,
-            'combine_consecutive_unsets' => true,
-            'compact_nullable_typehint' => true,
-            'general_phpdoc_annotation_remove' => ['author'],
-            'header_comment' => ['header' => ''],
-            'heredoc_to_nowdoc' => true,
-            'list_syntax' => ['syntax' => 'long'],
-            'method_argument_space' => ['ensure_fully_multiline' => true],
-            'no_extra_consecutive_blank_lines' => [
-                'tokens' => [
-                    'break',
-                    'continue',
-                    'extra',
-                    'return',
-                    'throw',
-                    'use',
-                    'parenthesis_brace_block',
-                    'square_brace_block',
-                    'curly_brace_block'
+            '' => [
+                'sort_algorithm' => 'custom',
+                'order' => [
+                    'Symfony\\Component\\Routing\\Annotation\\Route',
+                    'OpenApi\\Attributes\\Tag',
+                    'OpenApi\\Attributes\\Parameter',
+                    'OpenApi\\Attributes\\RequestBody',
+                    'OpenApi\\Attributes\\Response',
+                    'Symfony\\Component\\HttpKernel\\Attribute\\Cache'
                 ]
             ],
-            'no_null_property_initialization' => true,
-            'no_short_echo_tag' => true,
+            'array_syntax' => 'short',
+            'general_phpdoc_annotation_remove' => ['author', 'package', 'subpackage'],
+            'header_comment' => ['header' => ''],
+            'heredoc_to_nowdoc' => true,
             'no_superfluous_elseif' => true,
-            'no_unneeded_curly_braces' => true,
-            'no_unneeded_final_method' => true,
             'no_useless_else' => true,
             'no_useless_return' => true,
             'ordered_class_elements' => true,
-            'ordered_imports' => true,
-            'phpdoc_add_missing_param_annotation' => true,
-            'phpdoc_order' => true,
-            'phpdoc_types_order' => true,
-            'semicolon_after_instruction' => true,
-            'single_line_comment_style' => true,
-            'yoda_style' => true,
             'method_chaining_indentation' => true,
-            'phpdoc_line_span' => ['const' => 'single', 'property' => 'single'],
-            'concat_space' => [
-                'spacing' => 'one',
+            'phpdoc_line_span' => [
+                'const' => 'single',
+                'property' => 'single'
             ],
+            'protected_to_private' => true,
+            'self_static_accessor' => true,
+            'simplified_if_return' => true,
+            'assign_null_coalescing_to_coalesce_equal' => true,
+            'ternary_to_null_coalescing' => true,
+            'php_unit_attributes' => true,
+
+
+            // override symfony
+            'blank_line_before_statement' => [
+                'statements' => [
+                    'return',
+                    'try'
+                ],
+            ],
+            'method_argument_space' => [
+                'on_multiline' => 'ensure_fully_multiline'
+            ],
+
         ];
     }
 }
