@@ -17,14 +17,14 @@ class SafeConfig extends Config
     public function getRules(): array
     {
         return [
-            // symfony set
+            // Symfony rule set
             '@Symfony' => true,
 
-            // ok
+            // additional configurations
             'attribute_empty_parentheses' => [
                 'use_parentheses' => false
             ],
-            '' => [
+            /*'ordered_attributes' => [
                 'sort_algorithm' => 'custom',
                 'order' => [
                     'Symfony\\Component\\Routing\\Annotation\\Route',
@@ -34,9 +34,15 @@ class SafeConfig extends Config
                     'OpenApi\\Attributes\\Response',
                     'Symfony\\Component\\HttpKernel\\Attribute\\Cache'
                 ]
+            ],*/
+            'array_syntax' => [
+                'syntax' => 'short'
             ],
-            'array_syntax' => 'short',
-            'general_phpdoc_annotation_remove' => ['author', 'package', 'subpackage'],
+            'general_phpdoc_annotation_remove' => [
+                'annotations' => [
+                    'author', 'package', 'subpackage'
+                ]
+            ],
             'header_comment' => ['header' => ''],
             'heredoc_to_nowdoc' => true,
             'no_superfluous_elseif' => true,
@@ -56,7 +62,7 @@ class SafeConfig extends Config
             'php_unit_attributes' => true,
 
 
-            // override symfony
+            // Symfony's ruleset overrides
             'blank_line_before_statement' => [
                 'statements' => [
                     'return',
@@ -66,7 +72,6 @@ class SafeConfig extends Config
             'method_argument_space' => [
                 'on_multiline' => 'ensure_fully_multiline'
             ],
-
         ];
     }
 }
