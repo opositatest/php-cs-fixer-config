@@ -4,26 +4,26 @@ declare(strict_types=1);
 
 namespace Opositatest\PhpCsFixerConfig\Test;
 
-use Opositatest\PhpCsFixerConfig\SafeConfig;
+use Opositatest\PhpCsFixerConfig\OpositatestConfig;
 use PHPUnit\Framework\TestCase;
 
-final class SafeConfigTest extends TestCase
+final class OpositatestConfigTest extends TestCase
 {
     public function testConfigContainsRules(): void
     {
-        $this->assertNotEmpty((new SafeConfig())->getRules());
+        $this->assertNotEmpty((new OpositatestConfig())->getRules());
     }
 
     public function testRiskyRulesAreNotAccepted(): void
     {
-        $this->assertFalse((new SafeConfig())->getRiskyAllowed());
+        $this->assertFalse((new OpositatestConfig())->getRiskyAllowed());
     }
 
     public function testConfigDoesNotContainRiskyRules(): void
     {
         $this->assertDoesNotMatchRegularExpression(
             '/\:risky/',
-            \implode(' ', \array_keys((new SafeConfig())->getRules()))
+            \implode(' ', \array_keys((new OpositatestConfig())->getRules()))
         );
     }
 }

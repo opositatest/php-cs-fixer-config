@@ -6,7 +6,7 @@ namespace Opositatest\PhpCsFixerConfig;
 
 use PhpCsFixer\Config;
 
-class SafeConfig extends Config
+final class OpositatestConfig extends Config
 {
     public function __construct()
     {
@@ -24,7 +24,7 @@ class SafeConfig extends Config
             'attribute_empty_parentheses' => [
                 'use_parentheses' => false,
             ],
-            /*'ordered_attributes' => [
+            'ordered_attributes' => [
                 'sort_algorithm' => 'custom',
                 'order' => [
                     'Symfony\\Component\\Routing\\Annotation\\Route',
@@ -34,7 +34,7 @@ class SafeConfig extends Config
                     'OpenApi\\Attributes\\Response',
                     'Symfony\\Component\\HttpKernel\\Attribute\\Cache'
                 ]
-            ],*/
+            ],
             'array_syntax' => [
                 'syntax' => 'short',
             ],

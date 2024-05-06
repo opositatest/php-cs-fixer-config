@@ -1,7 +1,9 @@
 <?php
 declare(strict_types=1);
 
-$config = new \Opositatest\PhpCsFixerConfig\SafeConfig();
+use Opositatest\PhpCsFixerConfig\OpositatestConfig;
+
+$config = new OpositatestConfig();
 $config->setCacheFile('.php-cs-fixer.cache');
 
 $config->getFinder()
