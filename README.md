@@ -19,7 +19,7 @@ Create a configuration file called `.php_cs.dist` in the project root with the f
 ```php
 <?php
 
-$config = new Opositatest\PhpCsFixerConfig\StrictConfig();
+$config = new Opositatest\PhpCsFixerConfig\OpositatestConfig();
 $config->getFinder()
     ->in(__DIR__ . "/src")
     ->in(__DIR__ . "/tests");
@@ -31,7 +31,7 @@ return $config;
 To execute the fixes manually, you must run the `php-cs-fixer` (usually located at `/vendor/bin` or `/bin`):
 
 ```
-$ ./vendor/bin/php-cs-fixer fix --config=.php_cs.dist
+$ ./vendor/bin/php-cs-fixer fix --config=.php-cs-fixer.dist.php
 ```
 
 The `--verbose` and `--diff` options can be useful to see what changes are being actually made. To avoid applying changes automatically, the `--dry-run` option can be used:
@@ -41,7 +41,7 @@ $ ./vendor/bin/php-cs-fixer fix --config=.php_cs.dist --verbose --diff --dry-run
 ```
 ## Limiting scope
 
-In large projects, the first time you run the tool you may end up with many changes, making it difficult to spot potential regressions. The tool makes use of the Symonfy Finder component, so you can use any of the filters provided by the component to limit by directory, file names, etc. For example:
+In large projects, the first time you run the tool you may end up with many changes, making it difficult to spot potential regressions. The tool makes use of the Symfony Finder component, so you can use any of the filters provided by the component to limit by directory, file names, etc. For example:
 
 ### Apply only to given subdirectory
 
