@@ -7,6 +7,9 @@ namespace Opositatest\PhpCsFixerConfig\Test;
 use Opositatest\PhpCsFixerConfig\OpositatestConfig;
 use PHPUnit\Framework\TestCase;
 
+use function array_keys;
+use function implode;
+
 final class OpositatestConfigTest extends TestCase
 {
     private OpositatestConfig $config;
@@ -30,7 +33,7 @@ final class OpositatestConfigTest extends TestCase
     {
         $this->assertDoesNotMatchRegularExpression(
             '/\:risky/',
-            \implode(' ', \array_keys($this->config->getRules()))
+            implode(' ', array_keys($this->config->getRules()))
         );
     }
 }

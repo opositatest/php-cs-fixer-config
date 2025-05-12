@@ -60,6 +60,8 @@ final class OpositatestConfig extends Config
             'assign_null_coalescing_to_coalesce_equal' => true,
             'ternary_to_null_coalescing' => true,
             'php_unit_attributes' => true,
+            'concat_space' => ['spacing' => 'one'],
+            'global_namespace_import' => ['import_classes' => true, 'import_constants' => true, 'import_functions' => true],
 
             // Symfony's ruleset overrides
             'blank_line_before_statement' => [
