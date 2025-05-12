@@ -32,8 +32,8 @@ final class OpositatestConfig extends Config
                     'OpenApi\\Attributes\\Parameter',
                     'OpenApi\\Attributes\\RequestBody',
                     'OpenApi\\Attributes\\Response',
-                    'Symfony\\Component\\HttpKernel\\Attribute\\Cache'
-                ]
+                    'Symfony\\Component\\HttpKernel\\Attribute\\Cache',
+                ],
             ],
             'array_syntax' => [
                 'syntax' => 'short',
