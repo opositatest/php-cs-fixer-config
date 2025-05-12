@@ -9,21 +9,28 @@ use PHPUnit\Framework\TestCase;
 
 final class OpositatestConfigTest extends TestCase
 {
+    private OpositatestConfig $config;
+
+    protected function setUp(): void
+    {
+        $this->config = new OpositatestConfig();
+    }
+
     public function testConfigContainsRules(): void
     {
-        $this->assertNotEmpty((new OpositatestConfig())->getRules());
+        $this->assertNotEmpty($this->config->getRules());
     }
 
     public function testRiskyRulesAreNotAccepted(): void
     {
-        $this->assertFalse((new OpositatestConfig())->getRiskyAllowed());
+        $this->assertFalse($this->config->getRiskyAllowed());
     }
 
     public function testConfigDoesNotContainRiskyRules(): void
     {
         $this->assertDoesNotMatchRegularExpression(
             '/\:risky/',
-            \implode(' ', \array_keys((new OpositatestConfig())->getRules()))
+            \implode(' ', \array_keys($this->config->getRules()))
         );
     }
 }
