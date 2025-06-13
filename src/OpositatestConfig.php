@@ -17,7 +17,8 @@ final class OpositatestConfig extends Config
     public function getRules(): array
     {
         return [
-            // Symfony rule set
+            // Symfony + PER Coding Style
+            '@PER' => true,
             '@Symfony' => true,
 
             // additional configurations
@@ -43,7 +44,9 @@ final class OpositatestConfig extends Config
                     'author', 'package', 'subpackage',
                 ],
             ],
-            'header_comment' => ['header' => ''],
+            'header_comment' => [
+                'header' => '',
+            ],
             'heredoc_to_nowdoc' => true,
             'no_superfluous_elseif' => true,
             'no_useless_else' => true,
@@ -53,6 +56,7 @@ final class OpositatestConfig extends Config
             'phpdoc_line_span' => [
                 'const' => 'single',
                 'property' => 'single',
+                'method' => 'single',
             ],
             'protected_to_private' => true,
             'self_static_accessor' => true,
@@ -60,8 +64,14 @@ final class OpositatestConfig extends Config
             'assign_null_coalescing_to_coalesce_equal' => true,
             'ternary_to_null_coalescing' => true,
             'php_unit_attributes' => true,
-            'concat_space' => ['spacing' => 'one'],
-            'global_namespace_import' => ['import_classes' => true, 'import_constants' => true, 'import_functions' => true],
+            'concat_space' => [
+                'spacing' => 'one',
+            ],
+            'global_namespace_import' => [
+                'import_classes' => true,
+                'import_constants' => true,
+                'import_functions' => true,
+            ],
 
             // Symfony's ruleset overrides
             'blank_line_before_statement' => [
@@ -73,6 +83,13 @@ final class OpositatestConfig extends Config
             'method_argument_space' => [
                 'on_multiline' => 'ensure_fully_multiline',
             ],
+            'combine_consecutive_issets' => true,
+            'combine_consecutive_unsets' => true,
+            'compact_nullable_typehint' => true,
+            'list_syntax' => ['syntax' => 'short'],
+            'native_function_type_declaration_casing' => true,
+            'no_unneeded_curly_braces' => true,
+            'phpdoc_add_missing_param_annotation' => true,
         ];
     }
 }
