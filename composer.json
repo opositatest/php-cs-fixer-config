@@ -1,12 +1,12 @@
 {
   "name": "opositatest/php-cs-fixer-config",
-  "description": "PHP CS Fixer configuration for opositatest projects",
+  "description": "PHP CS Fixer configuration for OpositaTest projects",
   "type": "library",
   "license": "MIT",
   "authors": [
     {
-      "name": "Opositatest Dev Team",
-      "email": "dev@opositatest.com"
+      "name": "OpositaTest Dev Team",
+      "email": "desarrollo@opositatest.com"
     }
   ],
   "require": {
