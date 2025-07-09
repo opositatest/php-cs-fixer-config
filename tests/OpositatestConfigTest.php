@@ -33,7 +33,7 @@ final class OpositatestConfigTest extends TestCase
     {
         $this->assertDoesNotMatchRegularExpression(
             '/\:risky/',
-            implode(' ', array_keys($this->config->getRules()))
+            implode(' ', array_keys($this->config->getRules())),
         );
     }
 }

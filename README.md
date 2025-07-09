@@ -1,6 +1,6 @@
 # php-cs-fixer-config
 
-This repository contains the common code style configuration for all Opositatest PHP projects.
+This repository contains the common code style configuration for all OpositaTest PHP projects.
 
 It's based on the ideas of [`refinery29/php-cs-fixer-config`](https://github.com/refinery29/php-cs-fixer-config/).
 
