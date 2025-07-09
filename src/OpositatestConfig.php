@@ -11,26 +11,31 @@ final class OpositatestConfig extends Config
     public function __construct()
     {
         parent::__construct('Opositatest');
+
         $this->setRiskyAllowed(false);
     }
 
     public function getRules(): array
     {
-        return [
-            // Symfony + PER Coding Style
-            '@PER' => true,
-            '@Symfony' => true,
-
-            // Additional configurations
-            'array_syntax' => [
-                'syntax' => 'short',
+        // We primarily follow PER (extends PSR-12), and Symfony coding standards
+        return array_merge(
+            [
+                '@PER' => true,
+                '@Symfony' => true,
             ],
+            self::perOverrides(),
+            self::symfonyOverrides(),
+            self::additionalRules(),
+        );
+    }
+
+    /** @return array<string, array|bool> */
+    private static function additionalRules(): array
+    {
+        return [
             'assign_null_coalescing_to_coalesce_equal' => true,
             'attribute_empty_parentheses' => [
                 'use_parentheses' => false,
-            ],
-            'concat_space' => [
-                'spacing' => 'one',
             ],
             'general_phpdoc_annotation_remove' => [
                 'annotations' => [
@@ -56,7 +61,6 @@ final class OpositatestConfig extends Config
                     'Symfony\\Component\\HttpKernel\\Attribute\\Cache',
                 ],
             ],
-            'ordered_class_elements' => true,
             'phpdoc_line_span' => [
                 'const' => 'single',
                 'property' => 'single',
@@ -67,8 +71,27 @@ final class OpositatestConfig extends Config
             'self_static_accessor' => true,
             'simplified_if_return' => true,
             'ternary_to_null_coalescing' => true,
+        ];
+    }
 
-            // Symfony's ruleset overrides
+    /** @return array<string, array|bool> */
+    private static function perOverrides(): array
+    {
+        return [
+            'array_syntax' => [
+                'syntax' => 'short',
+            ],
+            'concat_space' => [
+                'spacing' => 'one',
+            ],
+            'ordered_class_elements' => true,
+        ];
+    }
+
+    /** @return array<string, array|bool> */
+    private static function symfonyOverrides(): array
+    {
+        return [
             'blank_line_before_statement' => [
                 'statements' => [
                     'return',
