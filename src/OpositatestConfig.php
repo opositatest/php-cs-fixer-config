@@ -86,7 +86,6 @@ final class OpositatestConfig extends Config
             'combine_consecutive_issets' => true,
             'combine_consecutive_unsets' => true,
             'list_syntax' => ['syntax' => 'short'],
-            'phpdoc_add_missing_param_annotation' => true,
         ];
     }
 }
